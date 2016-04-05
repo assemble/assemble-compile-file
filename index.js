@@ -25,7 +25,8 @@ var debug = utils.debug;
  */
 
 module.exports = function(config) {
-  return function(app) {
+  return function plugin(app) {
+    if (!isValidInstance(this)) return;
     config = utils.merge({}, app.options, config);
 
     app.define('compileFile', function(engine, locals) {
@@ -79,6 +80,8 @@ module.exports = function(config) {
         });
       });
     });
+
+    return plugin;
   };
 };
 
@@ -91,4 +94,14 @@ function resolveEngine(app, ctx, engine) {
   }
 
   return ctx.engine;
+}
+
+function isValidInstance(app) {
+  if (app.isView || app.isItem) {
+    return false;
+  }
+  if (app.isRegistered('assemble-render-file')) {
+    return false;
+  }
+  return true;
 }

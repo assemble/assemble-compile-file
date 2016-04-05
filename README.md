@@ -1,6 +1,6 @@
 # assemble-compile-file [![NPM version](https://img.shields.io/npm/v/assemble-compile-file.svg?style=flat)](https://www.npmjs.com/package/assemble-compile-file) [![NPM downloads](https://img.shields.io/npm/dm/assemble-compile-file.svg?style=flat)](https://npmjs.org/package/assemble-compile-file) [![Build Status](https://img.shields.io/travis/jonschlinkert/assemble-compile-file.svg?style=flat)](https://travis-ci.org/jonschlinkert/assemble-compile-file)
 
-> Assemble plugin for compileing views in a vinyl pipeline.
+> Assemble plugin for compiling views (in a vinyl pipeline) that might need to be rendered more than once.
 
 ## Install
 
